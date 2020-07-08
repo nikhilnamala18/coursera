@@ -14,18 +14,16 @@ h1{
 }
 .content{
   background-color: grey;
-  border: 2px solid black;
+  border: 1px solid black;
   margin: 2% auto;
   width: 90%;
-  height: 150px;
+  height: 200px;
   overflow: hidden;
   position: relative;
   top: 25px;
 }
 .content > h2{
-  border-width: 0 0 2px 2px;
-  border-style: solid;
-  border-color: black;
+  border: 1px solid black;
   text-align: center;
   font-size: 125%;
   width: 40%;
@@ -37,10 +35,10 @@ h1{
 }
 .content > p{
   font-size: 100%;
-  margin: 4%;
+  margin: 20px;
   width: 90%;
   position: relative;
-  top: 25px;
+  top: 20px;
 }
 #first{
   background-color: pink;
@@ -71,5 +69,12 @@ h1{
   }
   #last > .content {
     width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    float: left;
+    width: 100%;
   }
 }
