@@ -1,0 +1,82 @@
+body {
+  font-size: 16px;
+  color: #000;
+  font-family: 'Comic Sans MS', Arial, sans-serif;
+}
+
+/** HEADER **/
+#header-nav {
+  background-color: grey;
+  border-radius: 0;
+  border: 2px solid #000;
+}
+.navbar-brand {
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+.navbar-brand h1 { /* Restaurant name */
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #000;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: .75;
+}
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+
+#nav-list a {
+  text-align: center;
+  font-size: 1.2em;
+}
+#nav-list a:hover {
+  background: grey;
+}
+hr {
+  border-top: 2px solid #000;
+  margin: 5px auto;
+}
+.navbar-default .navbar-nav>li>a {
+  color: #000;
+}
+.navbar-nav>li>a {
+  line-height: 10px;
+}
+.navbar-header button.navbar-toggle.collapsed, button.navbar-toggle.collapsed .icon-bar {
+  border: 1px solid #000;
+}
+.navbar-header button.navbar-toggle {
+  clear: both;
+  margin-top: -30px;
+}
+button.navbar-toggle, button.navbar-toggle .icon-bar {
+  border: 1px solid #fff;
+}
+/* END HEADER */
+
+/*MAIN PAGE */
+#menu-categories-title {
+  margin-bottom: 20px;
+}
+.section-contents {
+  background-color: grey;
+  margin: 10px auto;
+}
+h3.section-heading {
+  padding-top: 10px;
+}
+.section-details {
+  font-size: 1em;
+  padding: 20px;
+}
+.section-contents>span {
+  font-size: 1em;
+  padding: 0 20px;
+}
+@media (max-width: 767px) {
+  #collapsable-nav{
+    background-color: #fff;
+    border-top: 2px solid #000;
+  }
+}
