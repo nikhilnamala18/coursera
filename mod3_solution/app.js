@@ -31,11 +31,9 @@ function NarrowItDownController(MenuSearchService) {
   nid.found = [];
 
   nid.narrowItDown = function () {
-    if (nid.searchTerm) {
       MenuSearchService.getMatchedMenuItems(nid.searchTerm).then( function(foundItem) {
         nid.found = foundItem;
       });
-    }
   }
 
   nid.removeItem = function (itemIndex) {
