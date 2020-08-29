@@ -22,7 +22,7 @@ function FoundItemsDirective() {
 }
 
 function NarrowItDownDirectiveController () {
-  
+
 }
 
 NarrowItDownController.$inject = ['MenuSearchService'];
@@ -32,7 +32,9 @@ function NarrowItDownController(MenuSearchService) {
 
   nid.narrowItDown = function () {
     if (nid.searchTerm) {
-      nid.found = MenuSearchService.getMatchedMenuItems(nid.searchTerm);
+      MenuSearchService.getMatchedMenuItems(nid.searchTerm).then( function(foundItem) {
+        nid.found = foundItem;
+      });
     }
   }
 
@@ -51,14 +53,14 @@ function MenuSearchService($http) {
       url: "https://davids-restaurant.herokuapp.com/menu_items.json"
     })
     .then( function (response) {
-      var foundItems = response.data;
-      for(var i = 0; i < foundItems.length; i++) {
-        if(foundItems[i].description.indexOf(searchTerm.toLowerCase()) !== -1) {
-          foundItems.splice(i, 1);
-          i--;
+      var foundItem = [];
+      var gotItems = response.data.menu_items;
+      for(var i = 0; i < gotItems.length; i++) {
+        if(gotItems[i].description.indexOf(searchTerm.toLowerCase()) !== -1) {
+          foundItem.push(gotItems[i]);
         }
       }
-      return foundItems;
+      return foundItem;
     })
     .catch( function (error) {
       console.log(error);
