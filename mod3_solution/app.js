@@ -31,7 +31,7 @@ function NarrowItDownController(MenuSearchService) {
   nid.found = [];
   nid.notfound = false;
   nid.narrowItDown = function () {
-    if(nid.searchTerm !== "") {
+    if(nid.searchTerm) {
       MenuSearchService.getMatchedMenuItems(nid.searchTerm).then( function(foundItem) {
         nid.found = foundItem;
         if(nid.found.length > 0) {
