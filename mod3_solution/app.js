@@ -29,11 +29,23 @@ NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService) {
   var nid = this;
   nid.found = [];
-
+  nid.notfound = false;
   nid.narrowItDown = function () {
+    if(nid.searchTerm !== "") {
       MenuSearchService.getMatchedMenuItems(nid.searchTerm).then( function(foundItem) {
         nid.found = foundItem;
+        if(nid.found.length > 0) {
+          nid.notfound = false;
+        }
+        else {
+          nid.notfound = true;
+        }
       });
+    }
+    else {
+      nid.notfound = true;
+      nid.found = [];
+    }
   }
 
   nid.removeItem = function (itemIndex) {
