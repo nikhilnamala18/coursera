@@ -5,8 +5,8 @@ angular.module('data')
 .service('MenuDataService', MenuDataService);
 
 
-MenuDataService.$inject = ['$html']
-function MenuDataService($html) {
+MenuDataService.$inject = ['$http']
+function MenuDataService($http) {
   var service = this;
 
   // Simulates call to server
