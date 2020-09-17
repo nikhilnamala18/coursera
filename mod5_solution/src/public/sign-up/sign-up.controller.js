@@ -11,7 +11,6 @@ function SignUpController(UserService) {
   $ctrl.submit = function () {
     var promise = UserService.getFavItem($ctrl.user.menu_number);
     promise.then( function (favitem) {
-      console.log(favitem);
       $ctrl.user.favitem = favitem;
       UserService.storeUserDetails($ctrl.user);
       $ctrl.found = true;
